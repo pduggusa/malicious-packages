@@ -1,0 +1,45 @@
+{
+  "modified": "2026-11-25T04:15:00Z",
+  "schema_version": "1.7.4",
+  "details": "slogsec is a malicious PyPI package from an earlier wave of the ChocoPoC campaign, in which fake CVE proof-of-concept repositories on GitHub target vulnerability researchers. It was presented as a colored, encrypted logger and listed as a dependency by lure repositories such as lincemorado97/CVE-2025-64446_CVE-2025-58034, lincemorado97/CVE-2025-55182_CVE-2025-66478 and lincemorado97/CVE-2025-14847. YesWeHack and Sekoia (2026-07-01) report that its code is very similar to the later skytext/frint chain, attribute both waves to the same actor with high confidence, and give the SHA-256 of slogsec 1.1.0 (released 2026-03-26) as 5abd45d6f4a1705dca55d882f017d4768888dce9ad99cea40b3da35c23de5cae. The package has been removed from PyPI.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "slogsec"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://www.yeswehack.com/news/chocopocs-vulnerability-researchers-trojanised-exploits"
+    }
+  ],
+  "credits": [
+    {
+      "name": "YesWeHack and Sekoia (Threat Detection & Research)",
+      "type": "FINDER",
+      "contact": [
+        "https://www.yeswehack.com/news/chocopocs-vulnerability-researchers-trojanised-exploits"
+      ]
+    },
+    {
+      "name": "Patrick Duggan, DugganUSA",
+      "type": "REPORTER",
+      "contact": [
+        "mailto:patrick@dugganusa.com"
+      ]
+    }
+  ]
+}
