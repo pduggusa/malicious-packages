@@ -1,0 +1,74 @@
+{
+  "modified": "2026-11-25T04:15:00Z",
+  "schema_version": "1.7.4",
+  "details": "skytext is a malicious PyPI package used in the ChocoPoC campaign, in which fake CVE proof-of-concept repositories on GitHub target vulnerability researchers. A PoC's requirements install frint, which pulls in skytext as a dependency. skytext 1.1.0 (SHA-256 93739477cd379adef95126b22758c0e644282d2028dd297328ce856fa111dd06) ships only precompiled wheels containing a native extension, gradient.so (Linux) or gradient.pyd (Windows). When the extension initializes it decrypts embedded payloads, persists through a .pth file and a trojanized _distutils_hack package, and runs a downloader (choco.py) that retrieves the ChocoPoC Python RAT using Mapbox datasets as a dead-drop resolver. Stolen data is uploaded to 91.132.163.78:8001. Documented by YesWeHack and Sekoia on 2026-07-01, who counted roughly 2,400 downloads of skytext. The package has been removed from PyPI.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "skytext"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://www.yeswehack.com/news/chocopocs-vulnerability-researchers-trojanised-exploits"
+    }
+  ],
+  "credits": [
+    {
+      "name": "YesWeHack and Sekoia (Threat Detection & Research)",
+      "type": "FINDER",
+      "contact": [
+        "https://www.yeswehack.com/news/chocopocs-vulnerability-researchers-trojanised-exploits"
+      ]
+    },
+    {
+      "name": "Patrick Duggan, DugganUSA",
+      "type": "REPORTER",
+      "contact": [
+        "mailto:patrick@dugganusa.com"
+      ]
+    }
+  ],
+  "database_specific": {
+    "iocs": {
+      "ips": [
+        "91.132.163.78"
+      ],
+      "files": [
+        {
+          "paths": [
+            "gradient.pyd"
+          ],
+          "digests": {
+            "sha256": "40569318e89db751ff3886b2617d990d8a343f0d1d8727b7f978a28129ca36bc"
+          },
+          "note": "Windows native extension in the skytext wheel: decrypts and drops the ChocoPoC loader (YesWeHack/Sekoia)",
+          "source": "PACKAGE_ARCHIVE"
+        },
+        {
+          "paths": [
+            "gradient.so"
+          ],
+          "digests": {
+            "sha256": "320b29844892e3c59bc6fcb07e701b2b3230a37cb4a13176174e9e294ec6d43e"
+          },
+          "note": "Linux native extension in the skytext wheel: decrypts and drops the ChocoPoC loader (YesWeHack/Sekoia)",
+          "source": "PACKAGE_ARCHIVE"
+        }
+      ]
+    }
+  }
+}
