@@ -1,0 +1,38 @@
+{
+  "modified": "2026-11-25T04:15:00Z",
+  "schema_version": "1.7.4",
+  "details": "@dforge-core/dforge-mcp is a legitimate MCP server for dForge module authoring. On 2026-09-09 an attacker with access to the maintainer account changed the repository so that pushes to main trigger the release workflow, and published version 0.2.21 carrying the GHAPPIER remote code loader on a single line (line 3320) of a 99 KB configuration file. The loader runs when the MCP server is started, not at install time, and opens a four-stage chain whose final implant deletes itself from disk. 0.2.21 was published at 2026-09-09T17:19:50Z and was the latest release for about 36 minutes, until the maintainer published a clean 0.2.22 at 17:55:28Z; 0.2.21 has since been removed from npm. Other versions are not affected. Documented by CloudSEK (2026-09-20).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "@dforge-core/dforge-mcp"
+      },
+      "versions": [
+        "0.2.21"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://www.cloudsek.com/blog/ghappier-malware-loader-npm-supply-chain-attack"
+    }
+  ],
+  "credits": [
+    {
+      "name": "CloudSEK (Vikas Kundu)",
+      "type": "FINDER",
+      "contact": [
+        "https://www.cloudsek.com/blog/ghappier-malware-loader-npm-supply-chain-attack"
+      ]
+    },
+    {
+      "name": "Patrick Duggan, DugganUSA",
+      "type": "REPORTER",
+      "contact": [
+        "mailto:patrick@dugganusa.com"
+      ]
+    }
+  ]
+}
