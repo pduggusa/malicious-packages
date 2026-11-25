@@ -1,22 +1,18 @@
 {
   "modified": "2026-11-25T04:15:00Z",
   "schema_version": "1.7.4",
-  "details": "graphcore-js is a renamed copy of the graphlib graph library published by the npm account monawillis412 (author \"Mona Willis\"), which JFrog links to the GRAPHCORE-JS GitHub organization. It belongs to a Graphalgo-linked campaign of look-alike npm libraries whose hidden loaders decrypt a second stage fetched from Ethereum and Base Sepolia smart contracts and use Slack and Telegram for command and control. JFrog Security Research and SafeDep both list graphcore-js versions 2.3.2, 2.3.4, 2.4.1 and 2.4.2 among the campaign's malicious packages (first seen 2026-03-17). The account published 17 versions between 2026-02-27 and 2026-03-09; npm has removed all but 2.4.4.",
+  "details": "graphcore-js is a renamed copy of the graphlib graph library published by the npm account monawillis412 (author \"Mona Willis\"), which JFrog links to the GRAPHCORE-JS GitHub organization. It belongs to a Graphalgo-linked campaign of look-alike npm libraries whose hidden loaders decrypt a second stage fetched from Ethereum and Base Sepolia smart contracts and use Slack and Telegram for command and control. JFrog Security Research and SafeDep both list graphcore-js versions 2.3.2, 2.3.4, 2.4.1 and 2.4.2 among the campaign's malicious packages (first seen 2026-03-17). The account published 17 versions between 2026-02-27 and 2026-03-09; npm has removed all but 2.4.4. This report lists the four versions both sources name.",
   "affected": [
     {
       "package": {
         "ecosystem": "npm",
         "name": "graphcore-js"
       },
-      "ranges": [
-        {
-          "type": "SEMVER",
-          "events": [
-            {
-              "introduced": "0"
-            }
-          ]
-        }
+      "versions": [
+        "2.3.2",
+        "2.3.4",
+        "2.4.1",
+        "2.4.2"
       ]
     }
   ],
