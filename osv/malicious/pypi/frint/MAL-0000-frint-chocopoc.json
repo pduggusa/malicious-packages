@@ -1,0 +1,45 @@
+{
+  "modified": "2026-11-25T04:15:00Z",
+  "schema_version": "1.7.4",
+  "details": "frint is a malicious PyPI package used in the ChocoPoC campaign, in which fake CVE proof-of-concept repositories on GitHub target vulnerability researchers. The PoCs list frint in their requirements; installing it pulls in skytext, whose native extension (gradient.so / gradient.pyd) drops a loader that retrieves the ChocoPoC Python RAT. frint appeared on PyPI about a month before the first PoC was reported and was published from an unverified email address. YesWeHack and Sekoia (2026-07-01) give the SHA-256 of frint 0.1.2 as 17997e9e0256d0f5d5d21a4852c37f16b338e4bb9c2bec09bdfd822b24aa76b4. The package has been removed from PyPI.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "frint"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "REPORT",
+      "url": "https://www.yeswehack.com/news/chocopocs-vulnerability-researchers-trojanised-exploits"
+    }
+  ],
+  "credits": [
+    {
+      "name": "YesWeHack and Sekoia (Threat Detection & Research)",
+      "type": "FINDER",
+      "contact": [
+        "https://www.yeswehack.com/news/chocopocs-vulnerability-researchers-trojanised-exploits"
+      ]
+    },
+    {
+      "name": "Patrick Duggan, DugganUSA",
+      "type": "REPORTER",
+      "contact": [
+        "mailto:patrick@dugganusa.com"
+      ]
+    }
+  ]
+}
